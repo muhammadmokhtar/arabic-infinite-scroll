@@ -1,3 +1,47 @@
-<h1>
-  {{title}}
-</h1>
+<div infinite-scroll
+  [infiniteScrollDistance]="modalScrollDistance"
+  [infiniteScrollUpDistance]="2.5"
+  [infiniteScrollThrottle]="modalScrollThrottle"
+  (scrolled)="onModalScrollDown()">
+  <div class="post" *ngFor="let notification of notifications">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="post-header">
+          <div class="row">
+            <div class="col-md-11">
+              <div class="post-header-info">
+                <div class="row">
+                  <div class="col-md-1">
+                    <img [src]="notification.userImageUrl" alt="" title="" />
+                  </div>
+                  <div class="col-md-11">
+                    <h4>{{notification.userFullName}}</h4>
+                    <h5>{{notification.userType}}</h5>
+                    <h6 >{{notification.postTime | amDateFormat:'LLLL'}}<i class="fa fa-globe" aria-hidden="true"></i> </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <div class="post-header-arrow text-left">
+                <i class="fa fa-angle-down fa-2x" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+      <div class="post-body">
+      <p>{{notification.body}}</p>
+      </div>
+      </div>
+      <div class="col-md-12">
+      <div class="post-footer pull-left">
+      <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i> {{notification.numberOfLikes}} إعجاب
+      <i class="fa fa-commenting fa-2x" aria-hidden="true"></i> {{notification.numberOfComments}} تعليق
+      <i class="fa fa-share fa-2x" aria-hidden="true"></i> {{notification.numberOfShares}} مشاركة
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
