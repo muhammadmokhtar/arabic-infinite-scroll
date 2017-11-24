@@ -14,6 +14,34 @@
       border-bottom:1px solid #7f7d7d;
           padding-bottom: 25px;
     }
+    img {
+      vertical-align: middle;
+      border-bottom: 3.5px solid #b3a7cac4;
+      box-shadow: 2px 2px 11px #333, -2px -2px 0px #d2cdcd;
+  }
+  .user {
+    padding-right: 35px;
+  }
+  .customi {
+    position: absolute;
+    right: 16px;
+    bottom: -20px;
+    top: 57px;
+    width: 32px;
+    height: 32px;
+    font-size:20px;
+    color:rgb(60, 235, 24);
+  }
+  .customo {
+    position: absolute;
+    right: 16px;
+    bottom: -20px;
+    top: 57px;
+    width: 32px;
+    height: 32px;
+    font-size:20px;
+    color:rgb(181, 172, 189);
+  }
       .post .post-header .post-header-info img
     {
       width:80px;

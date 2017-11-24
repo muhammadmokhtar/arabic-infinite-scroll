@@ -12,12 +12,14 @@
               <div class="post-header-info">
                 <div class="row">
                   <div class="col-md-1">
-                    <img [src]="notification.userImageUrl" alt="" title="" />
+                    <img [src]="notification.userImageUrl" alt="" title=""/>
+                    <i *ngIf="notification.userIsOnline" class="fa fa-circle customi"></i>
+                    <i *ngIf="!notification.userIsOnline" class="fa fa-circle customo"></i>
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-11 user">
                     <h4>{{notification.userFullName}}</h4>
                     <h5>{{notification.userType}}</h5>
-                    <h6 >{{notification.postTime | amDateFormat:'LLLL'}}<i class="fa fa-globe" aria-hidden="true"></i> </h6>
+                    <h6>{{notification.postTime | amTimeAgo:true}}  مضت <i class="fa fa-globe" aria-hidden="true"></i> </h6>
                   </div>
                 </div>
               </div>
